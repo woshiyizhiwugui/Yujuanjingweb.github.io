@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jing Yujuan - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-logo">Jing Yujuan</div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="Home.html" class="active">Home</a>
+                    <a href="About.html">About</a>
+                    <a href="Projects.html">Projects</a>
+                    <a href="Experience.html">Experience</a>
+                    <a href="Awards.html">Awards</a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首页Banner -->
+    <section class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h1>Computer Science Student</h1>
+                    <p>Specializing in Embedded Systems, Unity 3D, and Data Analysis</p>
+                    <p>Strong leadership and cross-cultural communication skills</p>
+                    
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">HTML/CSS/JS</span>
+                        <span class="skill-tag">Unity 3D</span>
+                    </div>
+                </div>
+                
+                <div class="banner-img-box">
+                    <img src="images/profile.jpg" alt="Jing Yujuan" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 快速导航 -->
+    <section class="quick-nav-section">
+        <div class="container">
+            <h2 class="section-title">Explore</h2>
+            <div class="quick-nav">
+                <div class="quick-nav-item">
+                    <div class="quick-nav-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <a href="About.html">About Me</a>
+                </div>
+                
+                <div class="quick-nav-item">
+                    <div class="quick-nav-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <a href="Projects.html">Projects</a>
+                </div>
+                
+                <div class="quick-nav-item">
+                    <div class="quick-nav-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <a href="Experience.html">Experience</a>
+                </div>
+                
+                <div class="quick-nav-item">
+                    <div class="quick-nav-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <a href="Awards.html">Awards</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>Phone: +86 15310273131</p>
+                    <p>Email: jingyujuan7@gmail.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <p><a href="About.html">About Me</a></p>
+                    <p><a href="Projects.html">Projects</a></p>
+                    <p><a href="Awards.html">Awards</a></p>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Jing Yujuan - Personal Website | All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端导航切换
+        function toggleMenu() {
+            const menu = document.getElementById("navMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+
+        // 滚动动画
+        function handleScrollAnimations() {
+            // 标题动画
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                const rect = title.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    title.classList.add('visible');
+                }
+            });
+
+            // 快速导航项动画
+            const navItems = document.querySelectorAll('.quick-nav-item');
+            navItems.forEach((item, index) => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        item.style.opacity = "1";
+                        item.style.transform = "translateY(0)";
+                    }, index * 150);
+                }
+            });A
+        }
+
+        // 初始化动画状态
+        document.querySelectorAll('.quick-nav-item').forEach(item => {
+            item.style.opacity = "0";
+            item.style.transform = "translateY(20px)";
+            item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        });
+
+        // 监听滚动和加载事件
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+    </script>
+</body>
+</html>

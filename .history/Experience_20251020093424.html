@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jing Yujuan - Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-logo">Jing Yujuan</div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="Home.html">Home</a>
+                    <a href="About.html">About</a>
+                    <a href="Projects.html">Projects</a>
+                    <a href="Experience.html" class="active">Experience</a>
+                    <a href="Awards.html">Awards</a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 实习经历 -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Internship Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Feb 2025 - Mar 2025</div>
+                        <h3 class="timeline-title">Yibin Chenhai Digital Technology Co., Ltd. - Operations Intern</h3>
+                        <div class="timeline-desc">
+                            <p>• Visual Design: Optimized tweet layout logic with Figma, creating 4 core prototypes; produced 15+ monthly materials with Canva, increasing content engagement by 30% and read completion rate by 18%.</p>
+                            <p>• Social Media Management: Managed "iYibin" App and official account (1000+ followers), achieving 1000+ views on top posts, 200% increase in readership, and 20% monthly follower growth.</p>
+                            <p>• Data Analysis: Led coupon distribution for 10+ districts, processing 5000+ data entries with SQL and VLOOKUP; delivered 2 visual reports, improving redemption rate by 12%.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 校园 & 交流经历 -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Campus & Exchange Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Apr 2025 - Sep 2025</div>
+                        <h3 class="timeline-title">Hainan University of Applied Sciences - Vice President of Student Union</h3>
+                        <div class="timeline-desc">
+                            <p>• Department Management: Oversaw recruitment for Living and Discipline Departments, developing operational standards (Living Department case successfully implemented).</p>
+                            <p>• Event Coordination: Promoted dormitory management initiatives and organized the first Student Union Congress, ensuring smooth execution.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sep 2024 - Sep 2025</div>
+                        <h3 class="timeline-title">Hainan International Education Innovation Zone - Youth League Committee Member</h3>
+                        <div class="timeline-desc">
+                            <p>• Proposal Development: Contributed to university campus space planning, independently drafting 2 feasibility reports that increased space utilization by 20%.</p>
+                            <p>• Meeting Coordination: Responsible for official meeting minutes, accurately documenting key decisions and ensuring effective information dissemination.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Dec 2024 - Mar 2025</div>
+                        <h3 class="timeline-title">Sino-German Exchange Program - Student Representative</h3>
+                        <div class="timeline-desc">
+                            <p>• Cross-Cultural Communication: Hosted university sports events for German delegates; assisted Tsinghua University's Su Minshi College delegation; led cultural exchange activities with translation support.</p>
+                            <p>• Event Hosting: Emceed the HSBI Spring School Award Ceremony, delivering closing remarks on intercultural learning outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>Phone: +86 15310273131</p>
+                    <p>Email: jingyujuan7@gmail.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <p><a href="Home.html">Home</a></p>
+                    <p><a href="Projects.html">Projects</a></p>
+                    <p><a href="Awards.html">Awards</a></p>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Jing Yujuan - Personal Website | All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端导航
+        function toggleMenu() {
+            const menu = document.getElementById("navMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+
+        // 滚动动画
+        function handleScrollAnimations() {
+            // 标题动画
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                const rect = title.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    title.classList.add('visible');
+                }
+            });
+
+            // 时间轴项目动画
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+        }
+
+        // 初始化动画
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+    </script>
+</body>
+</html>

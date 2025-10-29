@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jing Yujuan - Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-logo">Jing Yujuan</div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="Home.html">Home</a>
+                    <a href="About.html">About</a>
+                    <a href="Projects.html" class="active">Projects</a>
+                    <a href="Experience.html">Experience</a>
+                    <a href="Awards.html">Awards</a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 项目作品 -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-container">
+                <!-- 项目1 -->
+                <div class="project-card">
+                    <img src="images/servo-system.jpg" alt="Embedded Voice-Controlled Servo System" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Embedded Voice-Controlled Servo System</h3>
+                        <p class="project-role">Team Lead & Core Developer | Mar 2025 - Jun 2025</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">PWM Algorithm</span>
+                            <span class="tech-tag">Hardware Integration</span>
+                        </div>
+                        <p class="project-desc">Implemented full-chain voice control with wake-up words and 5 commands, optimizing servo precision to ±2°.</p>
+                        <button class="detail-btn" onclick="toggleDetails(this)">View Details</button>
+                        <div class="project-details">
+                            <p>1. Established a "three-module parallel" collaboration system, completing delivery within 15 days;<br>
+                            2. Led efforts to resolve angle deviation issues, reconstructing PWM duty cycle algorithms to improve precision from ±10° to ±2°;<br>
+                            3. Modular design increased subsequent iteration efficiency by 40%, selected as a teaching case in the department.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目2 -->
+                <div class="project-card">
+                    <img src="images/german-board.jpg" alt="German Learning Dashboard App" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">German Learning Dashboard App</h3>
+                        <p class="project-role">Project Lead & Full-Stack Developer | Apr 2025</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML/CSS/JS</span>
+                            <span class="tech-tag">Canvas</span>
+                            <span class="tech-tag">GitHub</span>
+                        </div>
+                        <p class="project-desc">Developed an interactive platform integrating German learning and games, with 475+ lines of core HTML code.</p>
+                        <button class="detail-btn" onclick="toggleDetails(this)">View Details</button>
+                        <div class="project-details">
+                            <p>1. Integrated Canvas/DOM element positioning to realize interaction between learning and game modules;<br>
+                            2. Used Trello for project management, tracking progress in real-time to ensure on-time delivery;<br>
+                            3. Recognized as a demonstration tool for German learning by faculty and students.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目3 -->
+                <div class="project-card">
+                    <img src="images/german-website.jpg" alt="German Learning Website & Game" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">German Learning Website & Game</h3>
+                        <p class="project-role">Team Lead & Developer | Mar 2025 - Jun 2025</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML/CSS/JS</span>
+                            <span class="tech-tag">VSCode</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
+                        <p class="project-desc">Developed a bilingual learning website with integrated games, ensuring cross-device compatibility.</p>
+                        <button class="detail-btn" onclick="toggleDetails(this)">View Details</button>
+                        <div class="project-details">
+                            <p>1. Implemented core website functionality with HTML/CSS/JS, ensuring stability across devices;<br>
+                            2. Coordinated team division of labor, establishing design standards and delivery milestones;<br>
+                            3. Combined educational content with interactive games to enhance learning engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>Phone: +86 15310273131</p>
+                    <p>Email: jingyujuan7@gmail.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <p><a href="Home.html">Home</a></p>
+                    <p><a href="About.html">About</a></p>
+                    <p><a href="Awards.html">Awards</a></p>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Jing Yujuan - Personal Website | All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端导航
+        function toggleMenu() {
+            const menu = document.getElementById("navMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+
+        // 项目详情展开/折叠
+        function toggleDetails(btn) {
+            const details = btn.nextElementSibling;
+            details.style.display = details.style.display === "block" ? "none" : "block";
+            btn.textContent = details.style.display === "block" ? "Hide Details" : "View Details";
+        }
+
+        // 滚动动画
+        function handleScrollAnimations() {
+            // 标题动画
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                const rect = title.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    title.classList.add('visible');
+                }
+            });
+
+            // 项目卡片动画
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 150);
+                }
+            });
+        }
+
+        // 初始化动画
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+    </script>
+</body>
+</html>
